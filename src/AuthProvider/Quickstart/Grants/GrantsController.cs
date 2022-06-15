@@ -1,7 +1,3 @@
-// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
-// Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
-
-
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,16 +11,16 @@ using Microsoft.AspNetCore.Mvc;
 namespace IdentityServer4.Quickstart.UI
 {
     /// <summary>
-    /// This sample controller allows a user to revoke grants given to clients
+    ///     This sample controller allows a user to revoke grants given to clients
     /// </summary>
     [SecurityHeaders]
     [Authorize]
     public class GrantsController : Controller
     {
-        private readonly IIdentityServerInteractionService _interaction;
         private readonly IClientStore _clients;
-        private readonly IResourceStore _resources;
         private readonly IEventService _events;
+        private readonly IIdentityServerInteractionService _interaction;
+        private readonly IResourceStore _resources;
 
         public GrantsController(IIdentityServerInteractionService interaction,
             IClientStore clients,
@@ -38,7 +34,7 @@ namespace IdentityServer4.Quickstart.UI
         }
 
         /// <summary>
-        /// Show list of grants
+        ///     Show list of grants
         /// </summary>
         [HttpGet]
         public async Task<IActionResult> Index()
@@ -47,7 +43,7 @@ namespace IdentityServer4.Quickstart.UI
         }
 
         /// <summary>
-        /// Handle postback to revoke a client
+        ///     Handle postback to revoke a client
         /// </summary>
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -71,7 +67,7 @@ namespace IdentityServer4.Quickstart.UI
                 {
                     var resources = await _resources.FindResourcesByScopeAsync(grant.Scopes);
 
-                    var item = new GrantViewModel()
+                    var item = new GrantViewModel
                     {
                         ClientId = client.ClientId,
                         ClientName = client.ClientName ?? client.ClientId,

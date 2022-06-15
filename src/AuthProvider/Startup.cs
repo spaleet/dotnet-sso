@@ -1,14 +1,11 @@
-﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
-// Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
-
-
-using System.Reflection;
+﻿using System.Reflection;
 using AuthProvider.Data;
 using AuthProvider.Models;
 using IdentityExpress.Identity;
 using IdentityExpress.Manager.Api;
 using IdentityServer4;
 using IdentityServer4.Configuration;
+using IdentityServer4.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -21,14 +18,14 @@ namespace AuthProvider
 {
     public class Startup
     {
-        public IWebHostEnvironment Environment { get; }
-        public IConfiguration Configuration { get; }
-
         public Startup(IWebHostEnvironment environment, IConfiguration configuration)
         {
             Configuration = configuration;
             Environment = environment;
         }
+
+        public IWebHostEnvironment Environment { get; }
+        public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -107,6 +104,7 @@ namespace AuthProvider
 
             services.UseAdminUI();
             services.AddScoped<IdentityExpressDbContext, SqliteIdentityDbContext>();
+            services.AddScoped<IProfileService, UserProfileService>();
         }
 
         public void Configure(IApplicationBuilder app)

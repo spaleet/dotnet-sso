@@ -8,32 +8,29 @@ namespace IdentityServer4EntityFramework.Migrations.IdentityServer.PersistedGran
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "PersistedGrants",
-                columns: table => new
+                "PersistedGrants",
+                table => new
                 {
-                    Key = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
-                    ClientId = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
-                    CreationTime = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    Data = table.Column<string>(type: "TEXT", maxLength: 50000, nullable: false),
-                    Expiration = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    SubjectId = table.Column<string>(type: "TEXT", maxLength: 200, nullable: true),
-                    Type = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false)
+                    Key = table.Column<string>("TEXT", maxLength: 200, nullable: false),
+                    ClientId = table.Column<string>("TEXT", maxLength: 200, nullable: false),
+                    CreationTime = table.Column<DateTime>("TEXT", nullable: false),
+                    Data = table.Column<string>("TEXT", maxLength: 50000, nullable: false),
+                    Expiration = table.Column<DateTime>("TEXT", nullable: true),
+                    SubjectId = table.Column<string>("TEXT", maxLength: 200, nullable: true),
+                    Type = table.Column<string>("TEXT", maxLength: 50, nullable: false)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_PersistedGrants", x => x.Key);
-                });
+                constraints: table => { table.PrimaryKey("PK_PersistedGrants", x => x.Key); });
 
             migrationBuilder.CreateIndex(
-                name: "IX_PersistedGrants_SubjectId_ClientId_Type",
-                table: "PersistedGrants",
-                columns: new[] { "SubjectId", "ClientId", "Type" });
+                "IX_PersistedGrants_SubjectId_ClientId_Type",
+                "PersistedGrants",
+                new[] { "SubjectId", "ClientId", "Type" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "PersistedGrants");
+                "PersistedGrants");
         }
     }
 }

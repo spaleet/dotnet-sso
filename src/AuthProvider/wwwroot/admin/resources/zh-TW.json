@@ -148,7 +148,8 @@
     },
     "UserEditable": "使用者可編輯",
     "Key": "關鍵值",
-    "CommunityEditionBanner": "歡迎使用AdminUI社群版。 這是用於管理IdentityServer組態和用戶的AdminUI工具的免費版本。它僅限於10個使用者和2個用戶端。 要了解有關完整AdminUI產品的更多訊息，請點擊下面的連結"
+    "CommunityEditionBanner":
+      "歡迎使用AdminUI社群版。 這是用於管理IdentityServer組態和用戶的AdminUI工具的免費版本。它僅限於10個使用者和2個用戶端。 要了解有關完整AdminUI產品的更多訊息，請點擊下面的連結"
   },
   "Nav": {
     "Breadcrumbs": "階層連結",

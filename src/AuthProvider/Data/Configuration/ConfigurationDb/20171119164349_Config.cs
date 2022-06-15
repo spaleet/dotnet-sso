@@ -8,526 +8,517 @@ namespace IdentityServer4EntityFramework.Migrations.IdentityServer.Configuration
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "ApiResources",
-                columns: table => new
+                "ApiResources",
+                table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>("INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Description = table.Column<string>(type: "TEXT", maxLength: 1000, nullable: true),
-                    DisplayName = table.Column<string>(type: "TEXT", maxLength: 200, nullable: true),
-                    Enabled = table.Column<bool>(type: "INTEGER", nullable: false),
-                    Name = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false)
+                    Description = table.Column<string>("TEXT", maxLength: 1000, nullable: true),
+                    DisplayName = table.Column<string>("TEXT", maxLength: 200, nullable: true),
+                    Enabled = table.Column<bool>("INTEGER", nullable: false),
+                    Name = table.Column<string>("TEXT", maxLength: 200, nullable: false)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ApiResources", x => x.Id);
-                });
+                constraints: table => { table.PrimaryKey("PK_ApiResources", x => x.Id); });
 
             migrationBuilder.CreateTable(
-                name: "Clients",
-                columns: table => new
+                "Clients",
+                table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>("INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    AbsoluteRefreshTokenLifetime = table.Column<int>(type: "INTEGER", nullable: false),
-                    AccessTokenLifetime = table.Column<int>(type: "INTEGER", nullable: false),
-                    AccessTokenType = table.Column<int>(type: "INTEGER", nullable: false),
-                    AllowAccessTokensViaBrowser = table.Column<bool>(type: "INTEGER", nullable: false),
-                    AllowOfflineAccess = table.Column<bool>(type: "INTEGER", nullable: false),
-                    AllowPlainTextPkce = table.Column<bool>(type: "INTEGER", nullable: false),
-                    AllowRememberConsent = table.Column<bool>(type: "INTEGER", nullable: false),
-                    AlwaysIncludeUserClaimsInIdToken = table.Column<bool>(type: "INTEGER", nullable: false),
-                    AlwaysSendClientClaims = table.Column<bool>(type: "INTEGER", nullable: false),
-                    AuthorizationCodeLifetime = table.Column<int>(type: "INTEGER", nullable: false),
-                    BackChannelLogoutSessionRequired = table.Column<bool>(type: "INTEGER", nullable: false),
-                    BackChannelLogoutUri = table.Column<string>(type: "TEXT", maxLength: 2000, nullable: true),
-                    ClientClaimsPrefix = table.Column<string>(type: "TEXT", maxLength: 200, nullable: true),
-                    ClientId = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
-                    ClientName = table.Column<string>(type: "TEXT", maxLength: 200, nullable: true),
-                    ClientUri = table.Column<string>(type: "TEXT", maxLength: 2000, nullable: true),
-                    ConsentLifetime = table.Column<int>(type: "INTEGER", nullable: true),
-                    Description = table.Column<string>(type: "TEXT", maxLength: 1000, nullable: true),
-                    EnableLocalLogin = table.Column<bool>(type: "INTEGER", nullable: false),
-                    Enabled = table.Column<bool>(type: "INTEGER", nullable: false),
-                    FrontChannelLogoutSessionRequired = table.Column<bool>(type: "INTEGER", nullable: false),
-                    FrontChannelLogoutUri = table.Column<string>(type: "TEXT", maxLength: 2000, nullable: true),
-                    IdentityTokenLifetime = table.Column<int>(type: "INTEGER", nullable: false),
-                    IncludeJwtId = table.Column<bool>(type: "INTEGER", nullable: false),
-                    LogoUri = table.Column<string>(type: "TEXT", maxLength: 2000, nullable: true),
-                    PairWiseSubjectSalt = table.Column<string>(type: "TEXT", maxLength: 200, nullable: true),
-                    ProtocolType = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
-                    RefreshTokenExpiration = table.Column<int>(type: "INTEGER", nullable: false),
-                    RefreshTokenUsage = table.Column<int>(type: "INTEGER", nullable: false),
-                    RequireClientSecret = table.Column<bool>(type: "INTEGER", nullable: false),
-                    RequireConsent = table.Column<bool>(type: "INTEGER", nullable: false),
-                    RequirePkce = table.Column<bool>(type: "INTEGER", nullable: false),
-                    SlidingRefreshTokenLifetime = table.Column<int>(type: "INTEGER", nullable: false),
-                    UpdateAccessTokenClaimsOnRefresh = table.Column<bool>(type: "INTEGER", nullable: false)
+                    AbsoluteRefreshTokenLifetime = table.Column<int>("INTEGER", nullable: false),
+                    AccessTokenLifetime = table.Column<int>("INTEGER", nullable: false),
+                    AccessTokenType = table.Column<int>("INTEGER", nullable: false),
+                    AllowAccessTokensViaBrowser = table.Column<bool>("INTEGER", nullable: false),
+                    AllowOfflineAccess = table.Column<bool>("INTEGER", nullable: false),
+                    AllowPlainTextPkce = table.Column<bool>("INTEGER", nullable: false),
+                    AllowRememberConsent = table.Column<bool>("INTEGER", nullable: false),
+                    AlwaysIncludeUserClaimsInIdToken = table.Column<bool>("INTEGER", nullable: false),
+                    AlwaysSendClientClaims = table.Column<bool>("INTEGER", nullable: false),
+                    AuthorizationCodeLifetime = table.Column<int>("INTEGER", nullable: false),
+                    BackChannelLogoutSessionRequired = table.Column<bool>("INTEGER", nullable: false),
+                    BackChannelLogoutUri = table.Column<string>("TEXT", maxLength: 2000, nullable: true),
+                    ClientClaimsPrefix = table.Column<string>("TEXT", maxLength: 200, nullable: true),
+                    ClientId = table.Column<string>("TEXT", maxLength: 200, nullable: false),
+                    ClientName = table.Column<string>("TEXT", maxLength: 200, nullable: true),
+                    ClientUri = table.Column<string>("TEXT", maxLength: 2000, nullable: true),
+                    ConsentLifetime = table.Column<int>("INTEGER", nullable: true),
+                    Description = table.Column<string>("TEXT", maxLength: 1000, nullable: true),
+                    EnableLocalLogin = table.Column<bool>("INTEGER", nullable: false),
+                    Enabled = table.Column<bool>("INTEGER", nullable: false),
+                    FrontChannelLogoutSessionRequired = table.Column<bool>("INTEGER", nullable: false),
+                    FrontChannelLogoutUri = table.Column<string>("TEXT", maxLength: 2000, nullable: true),
+                    IdentityTokenLifetime = table.Column<int>("INTEGER", nullable: false),
+                    IncludeJwtId = table.Column<bool>("INTEGER", nullable: false),
+                    LogoUri = table.Column<string>("TEXT", maxLength: 2000, nullable: true),
+                    PairWiseSubjectSalt = table.Column<string>("TEXT", maxLength: 200, nullable: true),
+                    ProtocolType = table.Column<string>("TEXT", maxLength: 200, nullable: false),
+                    RefreshTokenExpiration = table.Column<int>("INTEGER", nullable: false),
+                    RefreshTokenUsage = table.Column<int>("INTEGER", nullable: false),
+                    RequireClientSecret = table.Column<bool>("INTEGER", nullable: false),
+                    RequireConsent = table.Column<bool>("INTEGER", nullable: false),
+                    RequirePkce = table.Column<bool>("INTEGER", nullable: false),
+                    SlidingRefreshTokenLifetime = table.Column<int>("INTEGER", nullable: false),
+                    UpdateAccessTokenClaimsOnRefresh = table.Column<bool>("INTEGER", nullable: false)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Clients", x => x.Id);
-                });
+                constraints: table => { table.PrimaryKey("PK_Clients", x => x.Id); });
 
             migrationBuilder.CreateTable(
-                name: "IdentityResources",
-                columns: table => new
+                "IdentityResources",
+                table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>("INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Description = table.Column<string>(type: "TEXT", maxLength: 1000, nullable: true),
-                    DisplayName = table.Column<string>(type: "TEXT", maxLength: 200, nullable: true),
-                    Emphasize = table.Column<bool>(type: "INTEGER", nullable: false),
-                    Enabled = table.Column<bool>(type: "INTEGER", nullable: false),
-                    Name = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
-                    Required = table.Column<bool>(type: "INTEGER", nullable: false),
-                    ShowInDiscoveryDocument = table.Column<bool>(type: "INTEGER", nullable: false)
+                    Description = table.Column<string>("TEXT", maxLength: 1000, nullable: true),
+                    DisplayName = table.Column<string>("TEXT", maxLength: 200, nullable: true),
+                    Emphasize = table.Column<bool>("INTEGER", nullable: false),
+                    Enabled = table.Column<bool>("INTEGER", nullable: false),
+                    Name = table.Column<string>("TEXT", maxLength: 200, nullable: false),
+                    Required = table.Column<bool>("INTEGER", nullable: false),
+                    ShowInDiscoveryDocument = table.Column<bool>("INTEGER", nullable: false)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_IdentityResources", x => x.Id);
-                });
+                constraints: table => { table.PrimaryKey("PK_IdentityResources", x => x.Id); });
 
             migrationBuilder.CreateTable(
-                name: "ApiClaims",
-                columns: table => new
+                "ApiClaims",
+                table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>("INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    ApiResourceId = table.Column<int>(type: "INTEGER", nullable: false),
-                    Type = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false)
+                    ApiResourceId = table.Column<int>("INTEGER", nullable: false),
+                    Type = table.Column<string>("TEXT", maxLength: 200, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ApiClaims", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ApiClaims_ApiResources_ApiResourceId",
-                        column: x => x.ApiResourceId,
-                        principalTable: "ApiResources",
-                        principalColumn: "Id",
+                        "FK_ApiClaims_ApiResources_ApiResourceId",
+                        x => x.ApiResourceId,
+                        "ApiResources",
+                        "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ApiScopes",
-                columns: table => new
+                "ApiScopes",
+                table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>("INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    ApiResourceId = table.Column<int>(type: "INTEGER", nullable: false),
-                    Description = table.Column<string>(type: "TEXT", maxLength: 1000, nullable: true),
-                    DisplayName = table.Column<string>(type: "TEXT", maxLength: 200, nullable: true),
-                    Emphasize = table.Column<bool>(type: "INTEGER", nullable: false),
-                    Name = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
-                    Required = table.Column<bool>(type: "INTEGER", nullable: false),
-                    ShowInDiscoveryDocument = table.Column<bool>(type: "INTEGER", nullable: false)
+                    ApiResourceId = table.Column<int>("INTEGER", nullable: false),
+                    Description = table.Column<string>("TEXT", maxLength: 1000, nullable: true),
+                    DisplayName = table.Column<string>("TEXT", maxLength: 200, nullable: true),
+                    Emphasize = table.Column<bool>("INTEGER", nullable: false),
+                    Name = table.Column<string>("TEXT", maxLength: 200, nullable: false),
+                    Required = table.Column<bool>("INTEGER", nullable: false),
+                    ShowInDiscoveryDocument = table.Column<bool>("INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ApiScopes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ApiScopes_ApiResources_ApiResourceId",
-                        column: x => x.ApiResourceId,
-                        principalTable: "ApiResources",
-                        principalColumn: "Id",
+                        "FK_ApiScopes_ApiResources_ApiResourceId",
+                        x => x.ApiResourceId,
+                        "ApiResources",
+                        "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ApiSecrets",
-                columns: table => new
+                "ApiSecrets",
+                table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>("INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    ApiResourceId = table.Column<int>(type: "INTEGER", nullable: false),
-                    Description = table.Column<string>(type: "TEXT", maxLength: 1000, nullable: true),
-                    Expiration = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    Type = table.Column<string>(type: "TEXT", maxLength: 250, nullable: true),
-                    Value = table.Column<string>(type: "TEXT", maxLength: 2000, nullable: true)
+                    ApiResourceId = table.Column<int>("INTEGER", nullable: false),
+                    Description = table.Column<string>("TEXT", maxLength: 1000, nullable: true),
+                    Expiration = table.Column<DateTime>("TEXT", nullable: true),
+                    Type = table.Column<string>("TEXT", maxLength: 250, nullable: true),
+                    Value = table.Column<string>("TEXT", maxLength: 2000, nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ApiSecrets", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ApiSecrets_ApiResources_ApiResourceId",
-                        column: x => x.ApiResourceId,
-                        principalTable: "ApiResources",
-                        principalColumn: "Id",
+                        "FK_ApiSecrets_ApiResources_ApiResourceId",
+                        x => x.ApiResourceId,
+                        "ApiResources",
+                        "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ClientClaims",
-                columns: table => new
+                "ClientClaims",
+                table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>("INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    ClientId = table.Column<int>(type: "INTEGER", nullable: false),
-                    Type = table.Column<string>(type: "TEXT", maxLength: 250, nullable: false),
-                    Value = table.Column<string>(type: "TEXT", maxLength: 250, nullable: false)
+                    ClientId = table.Column<int>("INTEGER", nullable: false),
+                    Type = table.Column<string>("TEXT", maxLength: 250, nullable: false),
+                    Value = table.Column<string>("TEXT", maxLength: 250, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ClientClaims", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ClientClaims_Clients_ClientId",
-                        column: x => x.ClientId,
-                        principalTable: "Clients",
-                        principalColumn: "Id",
+                        "FK_ClientClaims_Clients_ClientId",
+                        x => x.ClientId,
+                        "Clients",
+                        "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ClientCorsOrigins",
-                columns: table => new
+                "ClientCorsOrigins",
+                table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>("INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    ClientId = table.Column<int>(type: "INTEGER", nullable: false),
-                    Origin = table.Column<string>(type: "TEXT", maxLength: 150, nullable: false)
+                    ClientId = table.Column<int>("INTEGER", nullable: false),
+                    Origin = table.Column<string>("TEXT", maxLength: 150, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ClientCorsOrigins", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ClientCorsOrigins_Clients_ClientId",
-                        column: x => x.ClientId,
-                        principalTable: "Clients",
-                        principalColumn: "Id",
+                        "FK_ClientCorsOrigins_Clients_ClientId",
+                        x => x.ClientId,
+                        "Clients",
+                        "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ClientGrantTypes",
-                columns: table => new
+                "ClientGrantTypes",
+                table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>("INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    ClientId = table.Column<int>(type: "INTEGER", nullable: false),
-                    GrantType = table.Column<string>(type: "TEXT", maxLength: 250, nullable: false)
+                    ClientId = table.Column<int>("INTEGER", nullable: false),
+                    GrantType = table.Column<string>("TEXT", maxLength: 250, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ClientGrantTypes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ClientGrantTypes_Clients_ClientId",
-                        column: x => x.ClientId,
-                        principalTable: "Clients",
-                        principalColumn: "Id",
+                        "FK_ClientGrantTypes_Clients_ClientId",
+                        x => x.ClientId,
+                        "Clients",
+                        "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ClientIdPRestrictions",
-                columns: table => new
+                "ClientIdPRestrictions",
+                table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>("INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    ClientId = table.Column<int>(type: "INTEGER", nullable: false),
-                    Provider = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false)
+                    ClientId = table.Column<int>("INTEGER", nullable: false),
+                    Provider = table.Column<string>("TEXT", maxLength: 200, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ClientIdPRestrictions", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ClientIdPRestrictions_Clients_ClientId",
-                        column: x => x.ClientId,
-                        principalTable: "Clients",
-                        principalColumn: "Id",
+                        "FK_ClientIdPRestrictions_Clients_ClientId",
+                        x => x.ClientId,
+                        "Clients",
+                        "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ClientPostLogoutRedirectUris",
-                columns: table => new
+                "ClientPostLogoutRedirectUris",
+                table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>("INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    ClientId = table.Column<int>(type: "INTEGER", nullable: false),
-                    PostLogoutRedirectUri = table.Column<string>(type: "TEXT", maxLength: 2000, nullable: false)
+                    ClientId = table.Column<int>("INTEGER", nullable: false),
+                    PostLogoutRedirectUri = table.Column<string>("TEXT", maxLength: 2000, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ClientPostLogoutRedirectUris", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ClientPostLogoutRedirectUris_Clients_ClientId",
-                        column: x => x.ClientId,
-                        principalTable: "Clients",
-                        principalColumn: "Id",
+                        "FK_ClientPostLogoutRedirectUris_Clients_ClientId",
+                        x => x.ClientId,
+                        "Clients",
+                        "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ClientProperties",
-                columns: table => new
+                "ClientProperties",
+                table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>("INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    ClientId = table.Column<int>(type: "INTEGER", nullable: false),
-                    Key = table.Column<string>(type: "TEXT", maxLength: 250, nullable: false),
-                    Value = table.Column<string>(type: "TEXT", maxLength: 2000, nullable: false)
+                    ClientId = table.Column<int>("INTEGER", nullable: false),
+                    Key = table.Column<string>("TEXT", maxLength: 250, nullable: false),
+                    Value = table.Column<string>("TEXT", maxLength: 2000, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ClientProperties", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ClientProperties_Clients_ClientId",
-                        column: x => x.ClientId,
-                        principalTable: "Clients",
-                        principalColumn: "Id",
+                        "FK_ClientProperties_Clients_ClientId",
+                        x => x.ClientId,
+                        "Clients",
+                        "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ClientRedirectUris",
-                columns: table => new
+                "ClientRedirectUris",
+                table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>("INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    ClientId = table.Column<int>(type: "INTEGER", nullable: false),
-                    RedirectUri = table.Column<string>(type: "TEXT", maxLength: 2000, nullable: false)
+                    ClientId = table.Column<int>("INTEGER", nullable: false),
+                    RedirectUri = table.Column<string>("TEXT", maxLength: 2000, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ClientRedirectUris", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ClientRedirectUris_Clients_ClientId",
-                        column: x => x.ClientId,
-                        principalTable: "Clients",
-                        principalColumn: "Id",
+                        "FK_ClientRedirectUris_Clients_ClientId",
+                        x => x.ClientId,
+                        "Clients",
+                        "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ClientScopes",
-                columns: table => new
+                "ClientScopes",
+                table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>("INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    ClientId = table.Column<int>(type: "INTEGER", nullable: false),
-                    Scope = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false)
+                    ClientId = table.Column<int>("INTEGER", nullable: false),
+                    Scope = table.Column<string>("TEXT", maxLength: 200, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ClientScopes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ClientScopes_Clients_ClientId",
-                        column: x => x.ClientId,
-                        principalTable: "Clients",
-                        principalColumn: "Id",
+                        "FK_ClientScopes_Clients_ClientId",
+                        x => x.ClientId,
+                        "Clients",
+                        "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ClientSecrets",
-                columns: table => new
+                "ClientSecrets",
+                table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>("INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    ClientId = table.Column<int>(type: "INTEGER", nullable: false),
-                    Description = table.Column<string>(type: "TEXT", maxLength: 2000, nullable: true),
-                    Expiration = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    Type = table.Column<string>(type: "TEXT", maxLength: 250, nullable: true),
-                    Value = table.Column<string>(type: "TEXT", maxLength: 2000, nullable: false)
+                    ClientId = table.Column<int>("INTEGER", nullable: false),
+                    Description = table.Column<string>("TEXT", maxLength: 2000, nullable: true),
+                    Expiration = table.Column<DateTime>("TEXT", nullable: true),
+                    Type = table.Column<string>("TEXT", maxLength: 250, nullable: true),
+                    Value = table.Column<string>("TEXT", maxLength: 2000, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ClientSecrets", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ClientSecrets_Clients_ClientId",
-                        column: x => x.ClientId,
-                        principalTable: "Clients",
-                        principalColumn: "Id",
+                        "FK_ClientSecrets_Clients_ClientId",
+                        x => x.ClientId,
+                        "Clients",
+                        "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "IdentityClaims",
-                columns: table => new
+                "IdentityClaims",
+                table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>("INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    IdentityResourceId = table.Column<int>(type: "INTEGER", nullable: false),
-                    Type = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false)
+                    IdentityResourceId = table.Column<int>("INTEGER", nullable: false),
+                    Type = table.Column<string>("TEXT", maxLength: 200, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_IdentityClaims", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_IdentityClaims_IdentityResources_IdentityResourceId",
-                        column: x => x.IdentityResourceId,
-                        principalTable: "IdentityResources",
-                        principalColumn: "Id",
+                        "FK_IdentityClaims_IdentityResources_IdentityResourceId",
+                        x => x.IdentityResourceId,
+                        "IdentityResources",
+                        "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ApiScopeClaims",
-                columns: table => new
+                "ApiScopeClaims",
+                table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>("INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    ApiScopeId = table.Column<int>(type: "INTEGER", nullable: false),
-                    Type = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false)
+                    ApiScopeId = table.Column<int>("INTEGER", nullable: false),
+                    Type = table.Column<string>("TEXT", maxLength: 200, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ApiScopeClaims", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ApiScopeClaims_ApiScopes_ApiScopeId",
-                        column: x => x.ApiScopeId,
-                        principalTable: "ApiScopes",
-                        principalColumn: "Id",
+                        "FK_ApiScopeClaims_ApiScopes_ApiScopeId",
+                        x => x.ApiScopeId,
+                        "ApiScopes",
+                        "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ApiClaims_ApiResourceId",
-                table: "ApiClaims",
-                column: "ApiResourceId");
+                "IX_ApiClaims_ApiResourceId",
+                "ApiClaims",
+                "ApiResourceId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ApiResources_Name",
-                table: "ApiResources",
-                column: "Name",
+                "IX_ApiResources_Name",
+                "ApiResources",
+                "Name",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_ApiScopeClaims_ApiScopeId",
-                table: "ApiScopeClaims",
-                column: "ApiScopeId");
+                "IX_ApiScopeClaims_ApiScopeId",
+                "ApiScopeClaims",
+                "ApiScopeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ApiScopes_ApiResourceId",
-                table: "ApiScopes",
-                column: "ApiResourceId");
+                "IX_ApiScopes_ApiResourceId",
+                "ApiScopes",
+                "ApiResourceId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ApiScopes_Name",
-                table: "ApiScopes",
-                column: "Name",
+                "IX_ApiScopes_Name",
+                "ApiScopes",
+                "Name",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_ApiSecrets_ApiResourceId",
-                table: "ApiSecrets",
-                column: "ApiResourceId");
+                "IX_ApiSecrets_ApiResourceId",
+                "ApiSecrets",
+                "ApiResourceId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ClientClaims_ClientId",
-                table: "ClientClaims",
-                column: "ClientId");
+                "IX_ClientClaims_ClientId",
+                "ClientClaims",
+                "ClientId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ClientCorsOrigins_ClientId",
-                table: "ClientCorsOrigins",
-                column: "ClientId");
+                "IX_ClientCorsOrigins_ClientId",
+                "ClientCorsOrigins",
+                "ClientId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ClientGrantTypes_ClientId",
-                table: "ClientGrantTypes",
-                column: "ClientId");
+                "IX_ClientGrantTypes_ClientId",
+                "ClientGrantTypes",
+                "ClientId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ClientIdPRestrictions_ClientId",
-                table: "ClientIdPRestrictions",
-                column: "ClientId");
+                "IX_ClientIdPRestrictions_ClientId",
+                "ClientIdPRestrictions",
+                "ClientId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ClientPostLogoutRedirectUris_ClientId",
-                table: "ClientPostLogoutRedirectUris",
-                column: "ClientId");
+                "IX_ClientPostLogoutRedirectUris_ClientId",
+                "ClientPostLogoutRedirectUris",
+                "ClientId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ClientProperties_ClientId",
-                table: "ClientProperties",
-                column: "ClientId");
+                "IX_ClientProperties_ClientId",
+                "ClientProperties",
+                "ClientId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ClientRedirectUris_ClientId",
-                table: "ClientRedirectUris",
-                column: "ClientId");
+                "IX_ClientRedirectUris_ClientId",
+                "ClientRedirectUris",
+                "ClientId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Clients_ClientId",
-                table: "Clients",
-                column: "ClientId",
+                "IX_Clients_ClientId",
+                "Clients",
+                "ClientId",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_ClientScopes_ClientId",
-                table: "ClientScopes",
-                column: "ClientId");
+                "IX_ClientScopes_ClientId",
+                "ClientScopes",
+                "ClientId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ClientSecrets_ClientId",
-                table: "ClientSecrets",
-                column: "ClientId");
+                "IX_ClientSecrets_ClientId",
+                "ClientSecrets",
+                "ClientId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_IdentityClaims_IdentityResourceId",
-                table: "IdentityClaims",
-                column: "IdentityResourceId");
+                "IX_IdentityClaims_IdentityResourceId",
+                "IdentityClaims",
+                "IdentityResourceId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_IdentityResources_Name",
-                table: "IdentityResources",
-                column: "Name",
+                "IX_IdentityResources_Name",
+                "IdentityResources",
+                "Name",
                 unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "ApiClaims");
+                "ApiClaims");
 
             migrationBuilder.DropTable(
-                name: "ApiScopeClaims");
+                "ApiScopeClaims");
 
             migrationBuilder.DropTable(
-                name: "ApiSecrets");
+                "ApiSecrets");
 
             migrationBuilder.DropTable(
-                name: "ClientClaims");
+                "ClientClaims");
 
             migrationBuilder.DropTable(
-                name: "ClientCorsOrigins");
+                "ClientCorsOrigins");
 
             migrationBuilder.DropTable(
-                name: "ClientGrantTypes");
+                "ClientGrantTypes");
 
             migrationBuilder.DropTable(
-                name: "ClientIdPRestrictions");
+                "ClientIdPRestrictions");
 
             migrationBuilder.DropTable(
-                name: "ClientPostLogoutRedirectUris");
+                "ClientPostLogoutRedirectUris");
 
             migrationBuilder.DropTable(
-                name: "ClientProperties");
+                "ClientProperties");
 
             migrationBuilder.DropTable(
-                name: "ClientRedirectUris");
+                "ClientRedirectUris");
 
             migrationBuilder.DropTable(
-                name: "ClientScopes");
+                "ClientScopes");
 
             migrationBuilder.DropTable(
-                name: "ClientSecrets");
+                "ClientSecrets");
 
             migrationBuilder.DropTable(
-                name: "IdentityClaims");
+                "IdentityClaims");
 
             migrationBuilder.DropTable(
-                name: "ApiScopes");
+                "ApiScopes");
 
             migrationBuilder.DropTable(
-                name: "Clients");
+                "Clients");
 
             migrationBuilder.DropTable(
-                name: "IdentityResources");
+                "IdentityResources");
 
             migrationBuilder.DropTable(
-                name: "ApiResources");
+                "ApiResources");
         }
     }
 }

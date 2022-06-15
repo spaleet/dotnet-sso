@@ -142,12 +142,15 @@
       "AreYouSureSimple": "Are you sure you want to reset the password for",
       "Title": "Reset Password",
       "HowToSetupTitle": "Setup User Password Reset Webhook",
-      "HowToSetup": "The Password Reset Webhook needs to be configured before you can use this feature. Read the AdminUI Webhook documentation for more information."
+      "HowToSetup":
+        "The Password Reset Webhook needs to be configured before you can use this feature. Read the AdminUI Webhook documentation for more information."
     },
     "UserEditable": "User Editable",
     "Key": "Key",
-    "CommunityEditionBanner": "Welcome to AdminUI Community Edition. This is a free version of the AdminUI tool for administering IdentityServer configuration and users. It is limited to 10 users and 2 clients. Find out more about the full AdminUI product:",
-    "CommunityPolicyNotice": "This is a preview of the Access Policy screen. In Community Edition the Access Policy features have been removed. You can use the screen but none of the policies will take effect. Find out more about the full AdminUI product:"
+    "CommunityEditionBanner":
+      "Welcome to AdminUI Community Edition. This is a free version of the AdminUI tool for administering IdentityServer configuration and users. It is limited to 10 users and 2 clients. Find out more about the full AdminUI product:",
+    "CommunityPolicyNotice":
+      "This is a preview of the Access Policy screen. In Community Edition the Access Policy features have been removed. You can use the screen but none of the policies will take effect. Find out more about the full AdminUI product:"
   },
   "Nav": {
     "SkipToContent": "Skip to content",
@@ -213,7 +216,8 @@
     "RssUnavailable": "RSS feed unavailable",
     "ValidateImportError": {
       "ImportNull": "Error occured while attempting to read import json",
-      "WrongVersion": "Sorry, the export file is from an incompatible version of AdminUI ({0}). Only versions 2.6.0 - {1} are supported",
+      "WrongVersion":
+        "Sorry, the export file is from an incompatible version of AdminUI ({0}). Only versions 2.6.0 - {1} are supported",
       "ValidateImport": "Sorry, there was a problem when importing. Please try again"
     }
   },
@@ -255,7 +259,8 @@
     "LastName": "Last Name",
     "Details": {
       "AddClaim": "Add Claim",
-      "AdditionalDetailsBody": "Configure optional details about the user. To create new types, please visit the Claim Types section of the UI."
+      "AdditionalDetailsBody":
+        "Configure optional details about the user. To create new types, please visit the Claim Types section of the UI."
     },
     "CopyValue": "Copy value from Details",
     "NoUsersFound": "No users found",
@@ -286,7 +291,8 @@
       "Revoke": "Revoke All",
       "RevokeApp": "Revoke Application",
       "RevokeAll": "Yes, revoke all",
-      "RevokeConfirm": "Confirming this will revoke access <u>for all</u> applications on this account. You can remove individual applications via the information popup.",
+      "RevokeConfirm":
+        "Confirming this will revoke access <u>for all</u> applications on this account. You can remove individual applications via the information popup.",
       "Accessible": "Resources/scopes accessible by application:",
       "RevokeUserConfirm": "This will revoke the access of",
       "ForUser": "for user",
@@ -334,7 +340,8 @@
     "NewRole": "New Role",
     "AddRole": "Add Role",
     "AddAnother": "Add another role after submit",
-    "AddAnotherInfo": "Selecting <strong>Add another role after submit</strong> will leave this dialogue box open after creating a role so you can easily add another.",
+    "AddAnotherInfo":
+      "Selecting <strong>Add another role after submit</strong> will leave this dialogue box open after creating a role so you can easily add another.",
     "CloseReturnsRoleList": "<strong>Add</strong> will close this box and take you back to the role list.",
     "RoleRemoved": "Role has been removed",
     "Search": "Search for a role...",
@@ -379,7 +386,8 @@
     "RuleValidationFailureDescription": "Rule Validation Failure Description",
     "Required": "Required Claim",
     "FutureUsers": "Value must be present to create future users",
-    "AddAnother": "Selecting <strong>Add Another</strong> will leave this dialogue box open after submitting so you can easily add another.",
+    "AddAnother":
+      "Selecting <strong>Add Another</strong> will leave this dialogue box open after submitting so you can easily add another.",
     "AddAnotherClaimType": "Add another claim type after submit",
     "DeleteConfirmation": "Are you sure you want to delete the claim type",
     "Search": "Search for a claim type...",
@@ -410,9 +418,11 @@
       "Failed": "Failed to update scope",
       "ScopeID": "Scope ID",
       "Consent": "Consent to use scope is required to complete authentication",
-      "DiscoveryDocumentDescription": "Scope appears within Discovery Document (<em>/.well-known/openid-configuration</em>)",
+      "DiscoveryDocumentDescription":
+        "Scope appears within Discovery Document (<em>/.well-known/openid-configuration</em>)",
       "EmphasiseScope": "Emphasize scope name on consent screen",
-      "UserClaimTypes": "User claim types to be included in tokens. Claims types will be added to the list of claim types for the parent resource.",
+      "UserClaimTypes":
+        "User claim types to be included in tokens. Claims types will be added to the list of claim types for the parent resource.",
       "ScopeAdded": "Scope Added"
     }
   },
@@ -424,7 +434,8 @@
     "IDHelp": "The unique identifier for this resource. Used in requests",
     "DisplayNameHelp": "Resource name that will be seen on consent screens",
     "ConsentResource": "Consent to use resource is required to complete authentication",
-    "DiscoveryDocumentDescription": "Resource appears within Discovery Document (<em>/.well-known/openid-configuration</em>)",
+    "DiscoveryDocumentDescription":
+      "Resource appears within Discovery Document (<em>/.well-known/openid-configuration</em>)",
     "ShowInDiscoveryDocument": "Show In Discovery Document",
     "ConsentScreen": "Emphasize resource name on consent screen",
     "UpdatedClient": "Updated Client Successfully",
@@ -459,21 +470,25 @@
     "DisplayURLHelp": "Application URL that will be seen on consent screens",
     "LogoURLHelp": "Application Logo that will be seen on consent screens. These protocols rely upon TLS in production",
     "DescriptionHelp": "Application description for use within AdminUI",
-    "CallbackURL": "Enter a callback URL<br/><small>Tokens will be sent to this endpoint (you can configure more after setup)</small>",
+    "CallbackURL":
+      "Enter a callback URL<br/><small>Tokens will be sent to this endpoint (you can configure more after setup)</small>",
     "PostLogoutURL": "Enter a post-logout URL<br /><small>Optional (you can configure more after setup)</small>",
     "RedirectURLDescription": "Full path of redirect URL. These protocols rely upon TLS in production",
-    "LogoutURLDescription": "Users can be returned to this URL after logging out. These protocols rely upon TLS in production",
+    "LogoutURLDescription":
+      "Users can be returned to this URL after logging out. These protocols rely upon TLS in production",
     "IdentityResourcesAccess": "Select the Identity Resources this client can access",
     "ProtectedResourcesAccess": "Select the Protected Resources this client can access",
     "Setup": "Setup a Client Application",
     "SelectType": "Select the type of application you want to create",
-    "StaticClaims": "Static claims returned in access tokens for this client application. By default these claims are only sent with the Client Credentials grant type.",
+    "StaticClaims":
+      "Static claims returned in access tokens for this client application. By default these claims are only sent with the Client Credentials grant type.",
     "NoClaims": "No claims found for this client",
     "AllowClaims": "Allow client claims to be sent for all grant types",
     "SendClaims": "Always Send Claims",
     "PrefixClaims": "Choose the text you would like to prefix claims with",
     "PrefixClaimsTitle": "Prefix Claims",
-    "Restrictions": "Identity providers the client application can use. If empty, all providers are allowed. Reference by AuthorityScheme within IdentityServer.",
+    "Restrictions":
+      "Identity providers the client application can use. If empty, all providers are allowed. Reference by AuthorityScheme within IdentityServer.",
     "AddRestriction": "Add Restriction",
     "ProviderName": "Provider Name",
     "NoRestrictions": "No restrictions found for this client",
@@ -605,7 +620,8 @@
             "ConfirmationText": {
               "Client": "The following changes will be made when importing this client. Do you accept the changes?",
               "Resource": "The following changes will be made when importing this resource. Do you accept the changes?",
-              "ClaimType": "The following changes will be made when importing this claim type. Do you accept the changes?"
+              "ClaimType":
+                "The following changes will be made when importing this claim type. Do you accept the changes?"
             },
             "Property": "Property",
             "Key": "Key",
@@ -763,7 +779,8 @@
       "AccessTokenLifetime": "Access Token Lifetime (seconds)",
       "ConsentLifetime": "Consent Token Lifetime (seconds)",
       "UserSSOLifetime": "SSO Lifetime (seconds)",
-      "UserSSOLifetimeTooltip": "Amount of time between user authentication challenges. Defaults to the IdentityServer session lifetime",
+      "UserSSOLifetimeTooltip":
+        "Amount of time between user authentication challenges. Defaults to the IdentityServer session lifetime",
       "FrontChannelLogoutUri": "Front Channel Logout Uri",
       "PairWiseSubjectSalt": "Pairwise Subject Salt",
       "FrontChannelLogoutSessionRequired": "Front Channel Logout Session Required",
@@ -829,7 +846,8 @@
     },
     "Home": {
       "Title": "Setup a Client Application",
-      "Description": "Choose an application type from the list to find out more.<br />Then click \"Start\" to begin setup."
+      "Description":
+        "Choose an application type from the list to find out more.<br />Then click \"Start\" to begin setup."
     },
     "WizardTypes": {
       "WebAppSelection": "Choose Supported Flow",
@@ -840,14 +858,16 @@
       "Setup": "Setup a Machine Application",
       "Title": "Machine",
       "Summary": "Client credentials",
-      "Description": "A machine-to-machine method of communication.<br />No users are involved in the process.<br />Tokens will be sent via back-channel communication.",
+      "Description":
+        "A machine-to-machine method of communication.<br />No users are involved in the process.<br />Tokens will be sent via back-channel communication.",
       "Created": "Machine Application Created"
     },
     "SPA": {
       "Setup": "Setup a Single Page Application",
       "Title": "Single Page App",
       "Summary": "Authorization code flow + PKCE",
-      "Description": "A client-side application running in a browser.<br/>These applications cannot be trusted to keep secrets or use refresh tokens.<br/>Tokens will be sent through via the browser and will be visible to the user.",
+      "Description":
+        "A client-side application running in a browser.<br/>These applications cannot be trusted to keep secrets or use refresh tokens.<br/>Tokens will be sent through via the browser and will be visible to the user.",
       "Created": "Single Page Application Created",
       "ExtractedDomain": "Extracted from your domain"
     },
@@ -855,7 +875,8 @@
       "Setup": "Setup a Legacy Single Page Application",
       "Title": "Single Page App (legacy)",
       "Summary": "Implicit flow",
-      "Description": "A client-side application running in a browser using previous OAuth Working Group recommendations.<br/>These applications cannot be trusted to keep secrets or use refresh tokens.<br/>Tokens will be sent through via the browser and will be visible to the user.",
+      "Description":
+        "A client-side application running in a browser using previous OAuth Working Group recommendations.<br/>These applications cannot be trusted to keep secrets or use refresh tokens.<br/>Tokens will be sent through via the browser and will be visible to the user.",
       "Created": "Legacy Single Page Application Created",
       "ExtractedDomain": "Extracted from your domain"
     },
@@ -863,7 +884,8 @@
       "Setup": "Setup a Web Application",
       "Title": "Web App",
       "Summary": "A server-side application",
-      "Description": "A server-side application running on your infrastructure.<br />These applications can be trusted to keep a secret and use refresh tokens.<br/>Tokens will be sent to a back-end server and will not be visible to the user.",
+      "Description":
+        "A server-side application running on your infrastructure.<br />These applications can be trusted to keep a secret and use refresh tokens.<br/>Tokens will be sent to a back-end server and will not be visible to the user.",
       "Created": "Web Application Created",
       "Secrets": "Enter some secrets (optional)"
     },
@@ -871,7 +893,8 @@
       "Setup": "Setup a Web Application",
       "Title": "Web App",
       "Summary": "Authorization code flow + PKCE",
-      "Description": "A server-side application running on your infrastructure.<br />These applications can be trusted to keep a secret and use refresh tokens.<br/>Tokens will be sent to a back-end server and will not be visible to the user.",
+      "Description":
+        "A server-side application running on your infrastructure.<br />These applications can be trusted to keep a secret and use refresh tokens.<br/>Tokens will be sent to a back-end server and will not be visible to the user.",
       "Created": "Web Application Created",
       "Secrets": "Enter some secrets (optional)"
     },
@@ -879,7 +902,8 @@
       "Setup": "Setup a Native Application",
       "Title": "Native",
       "Summary": "Authorization code flow + PKCE",
-      "Description": "A desktop or mobile application running on a user's device.<br />These applications cannot be trusted to keep a secret but can use refresh tokens.<br />Token visibility dependent on browser and redirect URI choice.",
+      "Description":
+        "A desktop or mobile application running on a user's device.<br />These applications cannot be trusted to keep a secret but can use refresh tokens.<br />Token visibility dependent on browser and redirect URI choice.",
       "Created": "Native Application Created",
       "Secrets": "Enter some secrets (optional)"
     },
@@ -887,14 +911,16 @@
       "Setup": "Setup a Device",
       "Title": "Device",
       "Summary": "Device flow using external browser",
-      "Description": "An IoT application or otherwise browserless or input constrained device.<br />These applications typically cannot be trusted to keep a secret but can use refresh tokens.",
+      "Description":
+        "An IoT application or otherwise browserless or input constrained device.<br />These applications typically cannot be trusted to keep a secret but can use refresh tokens.",
       "Created": "Device Flow Application Created"
     },
     "Saml": {
       "Setup": "Setup a SAML Service Provider",
       "Title": "SAML Service Provider",
       "Summary": "SAML 2.0 application",
-      "Description": "A SAML 2.0 service provider commonly used by government and educational institutions.<br />Cannot be used for API access.",
+      "Description":
+        "A SAML 2.0 service provider commonly used by government and educational institutions.<br />Cannot be used for API access.",
       "Created": "SAML Service Provider Created",
       "DefaultEndpoint": "Default Endpoint",
       "LocationUrl": "Location Url",
@@ -909,13 +935,15 @@
       "LocationBindingUnique": "Endpoint and binding type must be unique",
       "Request": "Request",
       "RequireRequestDestination": "Require request destination",
-      "RequireRequestDestinationHelp": "Ensures that incoming SAML requests include a destination value, allowing IdentityServer to confirm that it is the intended recipient (recommended)",
+      "RequireRequestDestinationHelp":
+        "Ensures that incoming SAML requests include a destination value, allowing IdentityServer to confirm that it is the intended recipient (recommended)",
       "SignAssertions": "Sign assertions",
       "SignAssertionsHelp": "Makes IdentityServer sign both SAML messages and assertions (recommended)",
       "AllowIdpInitiatedSso": "Allow IdP Initiated SSO",
       "AllowIdpInitiatedSsoHelp": "Allows single sign-on to be initiated by your Identity Provider (not recommended)",
       "EncryptAssertions": "Encrypt assertions",
-      "EncryptAssertionsHelp": "Makes IdentityServer encrypt assertions sent to the Service Provider, using their public key",
+      "EncryptAssertionsHelp":
+        "Makes IdentityServer encrypt assertions sent to the Service Provider, using their public key",
       "AddCert": "Add Certificate",
       "DeleteCert": "Delete Certificate",
       "AddCertSummary": "Upload a certificate or paste the certificate value from meta data",
@@ -937,7 +965,8 @@
       "Setup": "Setup a WS-Federation Relying Party",
       "Title": "WS-Fed Relying Party",
       "Summary": "WS-Federation application",
-      "Description": "A WS-Federation relying party commonly used by older Microsoft applications.<br />Cannot be used for API access.",
+      "Description":
+        "A WS-Federation relying party commonly used by older Microsoft applications.<br />Cannot be used for API access.",
       "Created": "WS-Federation Relying Party Created"
     },
     "URLS": {
