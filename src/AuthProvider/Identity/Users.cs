@@ -2,27 +2,26 @@
 using IdentityModel;
 using IdentityServer4.Test;
 
-namespace AuthProvider.Identity
+namespace AuthProvider.Identity;
+
+public class Users
 {
-    public class Users
+    public static List<TestUser> Get()
     {
-        public static List<TestUser> Get()
+        return new List<TestUser>
         {
-            return new List<TestUser>
+            new TestUser
             {
-                new TestUser
+                SubjectId = "56892347",
+                Username = "user",
+                Password = "1234@",
+                Claims = new List<Claim>
                 {
-                    SubjectId = "56892347",
-                    Username = "procoder",
-                    Password = "password",
-                    Claims = new List<Claim>
-                    {
-                        new Claim(JwtClaimTypes.Email, "support@procodeguide.com"),
-                        new Claim(JwtClaimTypes.Role, "admin"),
-                        new Claim(JwtClaimTypes.WebSite, "https://procodeguide.com")
-                    }
+                    new Claim(JwtClaimTypes.Email, "user@username.com"),
+                    new Claim(JwtClaimTypes.Role, "admin"),
+                    new Claim(JwtClaimTypes.Role, "user")
                 }
-            };
-        }
+            }
+        };
     }
 }
