@@ -352,3 +352,4 @@ MigrationBackup/
 *.rsa
 *.ps1
 *.db
+/src/AuthProvider/tempkey.jwk

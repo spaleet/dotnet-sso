@@ -1,57 +1,47 @@
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
+using Client;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddControllers();
 builder.Services.AddRazorPages();
 
 builder.Services.AddAuthentication(options =>
-    {
-        options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-        options.DefaultChallengeScheme = "oidc";
-    })
-    .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddOpenIdConnect("oidc", options =>
-    {
-        options.Authority = "https://localhost:5001";
-        options.ClientId = "webAppClient";
-        options.ClientSecret = "secret";
-        options.ResponseType = "code";
-        options.CallbackPath = "/sign-in/oidc";
-        options.SaveTokens = true;
-        options.RequireHttpsMetadata = false;
-        options.GetClaimsFromUserInfoEndpoint = true;
-    })
-    .AddJwtBearer(options =>
-    {
-        options.Authority = "https://localhost:5001";
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateAudience = false
-        };
-        options.RequireHttpsMetadata = false;
-        options.Events = new JwtBearerEvents
-        {
-            OnMessageReceived = context =>
+{
+    options.DefaultScheme = "cookie";
+    options.DefaultChallengeScheme = "oidc";
+})
+            .AddCookie("cookie")
+            .AddOpenIdConnect("oidc", options =>
             {
-                var path = context.HttpContext.Request.Path;
-                // Attempt to get a token from a query sting used by WebSocket
-                var accessToken = context.Request.Query["access_token"];
+                options.Authority = "https://localhost:5001";
+                options.ClientId = "clientApp";
+                options.ClientSecret = "clientApp";
 
-                // If not present, extract the token from Authorization header
-                if (string.IsNullOrWhiteSpace(accessToken))
-                    accessToken = context.Request.Headers["Authorization"]
-                        .ToString()
-                        .Replace("Bearer ", "");
+                options.ResponseType = "code";
+                options.UsePkce = true;
+                options.ResponseMode = "query";
 
-                context.Token = accessToken;
+                options.Scope.Add("clientApi.read");
+                options.SaveTokens = true;
+            });
 
-                return Task.CompletedTask;
-            }
-        };
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("BasicAuth", policy =>
+    {
+        policy.RequireAuthenticatedUser();
     });
+
+    options.AddPolicy("AdminClaim", policy =>
+    {
+        policy.RequireClaim("admin");
+    });
+
+    options.AddPolicy("AdminOnly", policy =>
+    {
+        policy.Requirements.Add(new RoleRequirement("admin"));
+    });
+});
 
 var app = builder.Build();
 
@@ -70,6 +60,7 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
+app.MapControllers();
 app.MapRazorPages();
 
 app.Run();

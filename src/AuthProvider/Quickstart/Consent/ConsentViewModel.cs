@@ -1,6 +1,10 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
-namespace IdentityServer4.Quickstart.UI
+
+using System.Collections.Generic;
+
+namespace IdentityServerHost.Quickstart.UI
 {
     public class ConsentViewModel : ConsentInputModel
     {
@@ -10,6 +14,6 @@ namespace IdentityServer4.Quickstart.UI
         public bool AllowRememberConsent { get; set; }
 
         public IEnumerable<ScopeViewModel> IdentityScopes { get; set; }
-        public IEnumerable<ScopeViewModel> ResourceScopes { get; set; }
+        public IEnumerable<ScopeViewModel> ApiScopes { get; set; }
     }
 }

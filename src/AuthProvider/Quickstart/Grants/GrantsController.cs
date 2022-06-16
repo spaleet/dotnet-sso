@@ -1,26 +1,30 @@
+// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
+
+
+using IdentityServer4.Services;
+using IdentityServer4.Stores;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using IdentityServer4.Events;
 using IdentityServer4.Extensions;
-using IdentityServer4.Services;
-using IdentityServer4.Stores;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 
-namespace IdentityServer4.Quickstart.UI
+namespace IdentityServerHost.Quickstart.UI
 {
     /// <summary>
-    ///     This sample controller allows a user to revoke grants given to clients
+    /// This sample controller allows a user to revoke grants given to clients
     /// </summary>
     [SecurityHeaders]
     [Authorize]
     public class GrantsController : Controller
     {
-        private readonly IClientStore _clients;
-        private readonly IEventService _events;
         private readonly IIdentityServerInteractionService _interaction;
+        private readonly IClientStore _clients;
         private readonly IResourceStore _resources;
+        private readonly IEventService _events;
 
         public GrantsController(IIdentityServerInteractionService interaction,
             IClientStore clients,
@@ -34,7 +38,7 @@ namespace IdentityServer4.Quickstart.UI
         }
 
         /// <summary>
-        ///     Show list of grants
+        /// Show list of grants
         /// </summary>
         [HttpGet]
         public async Task<IActionResult> Index()
@@ -43,7 +47,7 @@ namespace IdentityServer4.Quickstart.UI
         }
 
         /// <summary>
-        ///     Handle postback to revoke a client
+        /// Handle postback to revoke a client
         /// </summary>
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -57,26 +61,27 @@ namespace IdentityServer4.Quickstart.UI
 
         private async Task<GrantsViewModel> BuildViewModelAsync()
         {
-            var grants = await _interaction.GetAllUserConsentsAsync();
+            var grants = await _interaction.GetAllUserGrantsAsync();
 
             var list = new List<GrantViewModel>();
-            foreach (var grant in grants)
+            foreach(var grant in grants)
             {
                 var client = await _clients.FindClientByIdAsync(grant.ClientId);
                 if (client != null)
                 {
                     var resources = await _resources.FindResourcesByScopeAsync(grant.Scopes);
 
-                    var item = new GrantViewModel
+                    var item = new GrantViewModel()
                     {
                         ClientId = client.ClientId,
                         ClientName = client.ClientName ?? client.ClientId,
                         ClientLogoUrl = client.LogoUri,
                         ClientUrl = client.ClientUri,
+                        Description = grant.Description,
                         Created = grant.CreationTime,
                         Expires = grant.Expiration,
                         IdentityGrantNames = resources.IdentityResources.Select(x => x.DisplayName ?? x.Name).ToArray(),
-                        ApiGrantNames = resources.ApiResources.Select(x => x.DisplayName ?? x.Name).ToArray()
+                        ApiGrantNames = resources.ApiScopes.Select(x => x.DisplayName ?? x.Name).ToArray()
                     };
 
                     list.Add(item);
