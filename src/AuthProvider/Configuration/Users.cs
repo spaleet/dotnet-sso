@@ -20,7 +20,8 @@ public class Users
                     new(JwtClaimTypes.Email, "user@username.com"),
                     new(JwtClaimTypes.Role, "admin"),
                     new(JwtClaimTypes.Role, "user")
-                }
+                },
+                IsActive = true
             }
         };
     }

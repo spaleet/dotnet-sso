@@ -1,10 +1,12 @@
 ﻿using IdentityModel.Client;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Client.Api.Controllers;
 
 [ApiController]
 [Route("/api/[controller]")]
+[AllowAnonymous]
 public class AuthController : ControllerBase
 {
     private readonly HttpClient _client;
