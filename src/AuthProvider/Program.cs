@@ -3,12 +3,12 @@
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddIdentityServer()
-                .AddInMemoryClients(Clients.Get())
-                .AddInMemoryIdentityResources(Resources.GetIdentityResources())
-                .AddInMemoryApiResources(Resources.GetApiResources())
-                .AddInMemoryApiScopes(Scopes.GetApiScopes())
-                .AddTestUsers(Users.Get())
-                .AddDeveloperSigningCredential();
+    .AddInMemoryClients(Clients.Get())
+    .AddInMemoryIdentityResources(ClientResources.GetIdentityResources())
+    .AddInMemoryApiResources(ClientResources.GetApiResources())
+    .AddInMemoryApiScopes(Scopes.GetApiScopes())
+    .AddTestUsers(Users.Get())
+    .AddDeveloperSigningCredential();
 
 var app = builder.Build();
 
