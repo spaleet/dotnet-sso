@@ -1,6 +1,12 @@
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddHttpClient("Auth_Provider", options =>
+{
+    options.BaseAddress = new Uri("https://localhost:5001");
+});
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -24,10 +30,10 @@ builder.Services.AddSwaggerGen(c =>
             new OpenApiSecurityScheme
             {
                 Reference = new OpenApiReference
-                    {
-                        Type = ReferenceType.SecurityScheme,
-                        Id = "Bearer"
-                    }
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
             },
             new List<string>()
         }
@@ -35,11 +41,15 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 builder.Services.AddAuthentication("Bearer")
-                .AddIdentityServerAuthentication("Bearer", options =>
-                {
-                    options.ApiName = "clientApi";
-                    options.Authority = "https://localhost:44343";
-                });
+    .AddJwtBearer("Bearer", options =>
+    {
+        options.Authority = "https://localhost:5001";
+
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateAudience = false
+        };
+    });
 
 var app = builder.Build();
 
