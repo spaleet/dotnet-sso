@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Client.Api.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("/api/[controller]")]
 [Authorize]
 public class WeatherForecastController : ControllerBase
 {
@@ -20,6 +20,7 @@ public class WeatherForecastController : ControllerBase
         _logger = logger;
     }
 
+    // GET /api/WeatherForecast
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {

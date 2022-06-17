@@ -41,23 +41,20 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 builder.Services.AddAuthentication("Bearer")
-    .AddJwtBearer("Bearer", options =>
-    {
-        options.Authority = "https://localhost:5001";
-
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateAudience = false
-        };
-    });
+                .AddJwtBearer("Bearer",
+                              options => 
+                              { 
+                                  options.Authority = "https://localhost:5001";
+                                  options.TokenValidationParameters = new TokenValidationParameters 
+                                  { 
+                                      ValidateAudience = false 
+                                  }; 
+                              });
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
